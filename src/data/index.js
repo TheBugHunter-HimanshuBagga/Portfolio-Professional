@@ -467,12 +467,12 @@ export const experienceData = [
   },
   {
     organization: "Sentinel Layer Pvt Ltd",
-    role: "Backend Developer — SaaS Based Startup",
-    duration: "June 2026 — Present",
-    status: "Ongoing",
-    type: "Full Time",
+    role: "Backend Developer Intern — SaaS Based Startup",
+    duration: "June — August 2026",
+    status: "Completed",
+    type: "Internship",
     description:
-      "Building scalable backend systems for an SRM-founded SaaS startup. Developing and maintaining core platform services, APIs, and infrastructure to support production workloads.",
+      "Completed a 2-month backend internship at an SRM-founded SaaS startup. Developed and maintained core platform services, APIs, and infrastructure, working across the full service lifecycle to support production workloads.",
     skills: [
       "Backend Development",
       "API Design",
@@ -480,6 +480,22 @@ export const experienceData = [
       "Production Operations",
     ],
     tech: ["Java", "Spring Boot", "REST APIs", "MySQL"],
+  },
+  {
+    organization: "GeeksforGeeks — SRMIST Campus Body",
+    role: "Associate Technical (promoted from Tech Team Member)",
+    duration: "2026 — Present",
+    status: "Ongoing",
+    type: "Campus Body",
+    description:
+      "Started as a Tech Team Member on the GeeksforGeeks SRMIST campus body and was promoted to Associate Technical. Organizing technical sessions, building event infrastructure, and driving engineering-focused content for the campus community.",
+    skills: [
+      "Technical Leadership",
+      "Event Organization",
+      "Public Speaking",
+      "Team Collaboration",
+    ],
+    tech: ["Technical Team", "Campus Events", "Mentoring"],
   },
   {
     organization: "Stackxs",
@@ -513,6 +529,10 @@ export const experienceLogos = {
   "Sentinel Layer Pvt Ltd": {
     logo: "https://cdn.simpleicons.org/springboot/68A063",
     className: "w-[54px] h-[54px] object-contain",
+  },
+  "GeeksforGeeks — SRMIST Campus Body": {
+    logo: "https://cdn.simpleicons.org/geeksforgeeks/2f8d30",
+    className: "w-[46px] h-[46px] object-contain",
   },
   Stackxs: {
     logo: "https://cdn.simpleicons.org/github/ffffff",
