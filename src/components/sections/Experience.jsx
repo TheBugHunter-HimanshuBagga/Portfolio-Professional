@@ -1,4 +1,32 @@
+import { useState } from "react";
 import { experienceData, experienceLogos } from "../../data/index.js";
+
+const DEFAULT_TILE = "w-[54px] h-[54px] bg-[#faf6f3] border-[#f2e2d8]";
+
+function LogoTile({ org, name }) {
+  const [failed, setFailed] = useState(false);
+
+  return (
+    <div
+      className={`${org?.tileClass ?? DEFAULT_TILE} shrink-0 rounded-2xl border flex items-center justify-center overflow-hidden`}
+    >
+      {org?.logo && !failed ? (
+        <img
+          src={org.logo}
+          alt={`${name} logo`}
+          className={org.className}
+          loading="lazy"
+          onError={() => setFailed(true)}
+        />
+      ) : (
+        <span className="text-[#ef6538] font-black text-lg">
+          {name.charAt(0)}
+        </span>
+      )}
+    </div>
+  );
+}
+
 
 function ExperienceCard({ intern, index }) {
   const ongoing =
@@ -17,23 +45,7 @@ function ExperienceCard({ intern, index }) {
 
       <div className="relative flex items-start justify-between gap-3">
         <div className="flex items-center gap-3 min-w-0">
-          <div className="w-[54px] h-[54px] shrink-0 rounded-2xl bg-[#faf6f3] border border-[#f2e2d8] flex items-center justify-center overflow-hidden">
-            {org ? (
-              <img
-                src={org.logo}
-                alt={intern.organization}
-                className={org.className}
-                loading="lazy"
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                }}
-              />
-            ) : (
-              <span className="text-[#ef6538] font-black text-lg">
-                {intern.organization.charAt(0)}
-              </span>
-            )}
-          </div>
+        <LogoTile org={org} name={intern.organization} />
           <div className="min-w-0">
             <p className="text-[11px] font-black uppercase tracking-[0.18em] text-[#ef6538]">
               {intern.type}

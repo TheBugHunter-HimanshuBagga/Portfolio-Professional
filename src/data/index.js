@@ -523,69 +523,78 @@ export const experienceData = [
 
 export const experienceLogos = {
   "JudgeIndia Solutions (Judge Group)": {
-    logo: "https://cdn.simpleicons.org/openjdk",
-    className: "w-[54px] h-[54px] object-contain",
+    logo: "https://www.judgeindiasolutions.com/wp-content/themes/judge-group/assets/logo/judge-group-logo@2x.png",
+    className: "max-w-[46px] max-h-[46px] w-auto h-auto object-contain",
+    tileClass: "w-[76px] h-[54px]",
   },
   "Sentinel Layer Pvt Ltd": {
-    logo: "https://cdn.simpleicons.org/springboot/68A063",
-    className: "w-[54px] h-[54px] object-contain",
+    logo: "https://sentinellayer.in/SL_Logo.svg",
+    className: "w-[30px] h-[33px] object-contain",
+    tileClass: "w-[54px] h-[54px] bg-[#0f172a] border-[#1e293b]",
   },
   "GeeksforGeeks — SRMIST Campus Body": {
     logo: "https://cdn.simpleicons.org/geeksforgeeks/2f8d30",
-    className: "w-[46px] h-[46px] object-contain",
+    className: "w-[30px] h-[30px] object-contain",
+    tileClass: "w-[54px] h-[54px] bg-[#f3faf4] border-[#d7eedb]",
   },
   Stackxs: {
     logo: "https://cdn.simpleicons.org/github/ffffff",
-    className: "w-[46px] h-[46px] object-contain",
+    className: "w-[30px] h-[30px] object-contain",
+    tileClass: "w-[54px] h-[54px] bg-[#171717] border-[#2a2a2a]",
   },
   "Independent Projects": {
     logo: "https://cdn.simpleicons.org/vercel/ffffff",
-    className: "w-[54px] h-[36px] object-contain",
+    className: "w-[44px] h-[24px] object-contain",
+    tileClass: "w-[54px] h-[54px] bg-[#0a0a0a] border-[#2a2a2a]",
   },
 };
 
 export const highlightsData = [
   {
-    title: "GitHub Pull Shark ×2",
+    badge: "Research Paper",
+    role: "Publication",
+    title: "Research Paper Published — 4th ICICACS-2026",
     description:
-      "Earned the Pull Shark achievement twice for sustained pull request contributions across repositories.",
-    role: "Open Source",
-    badge: "Achievement",
+      "Research paper accepted and published at the 4th International Conference on Integrated Circuits and Communication Systems (ICICACS - 2026) after peer review.",
+    icon: "paper",
+    logoClass: "w-[26px] h-[26px]",
   },
   {
-    title: "GitHub YOLO Achievement",
+    badge: "SAP",
+    role: "Global Certification",
+    title: "SAP Certified — SAP Generative AI Developer",
     description:
-      "Recognized for shipping changes with confidence across personal and collaborative projects.",
-    role: "Contribution",
-    badge: "Highlight",
+      "Official SAP global certification for Generative AI Developer, validating hands-on proficiency across SAP's generative AI tooling and business AI workflows.",
+    logo: "https://cdn.simpleicons.org/sap/0FAAFF",
+    logoClass: "w-[32px] h-[32px]",
   },
   {
-    title: "50-Day LeetCode Streak (2026)",
+    badge: "Microsoft",
+    role: "Global Certification",
+    title: "Microsoft Certified — SQL AI Developer Associate",
     description:
-      "Consistent daily problem solving with a 50-day streak badge and 168 problems solved across multiple topics.",
+      "Microsoft Certified: SQL AI Developer Associate (DP-800) — validates skills in building and optimizing AI-enabled SQL data solutions on Azure.",
+    icon: "microsoft",
+    logoClass: "w-[28px] h-[28px]",
+  },
+  {
+    badge: "Redis",
+    role: "Global Certification",
+    title: "Redis Associate Developer — Java",
+    description:
+      "Redis global certification for Associate Developer (Java), covering core data structures, caching patterns, persistence and Java client integration.",
+    logo: "https://cdn.simpleicons.org/redis/FF4438",
+    logoClass: "w-[32px] h-[32px]",
+  },
+  {
+    badge: "LeetCode",
     role: "Problem Solving",
-    badge: "Consistency",
-  },
-  {
-    title: "36 Public Repositories",
+    title: "175 Questions Solved on LeetCode",
     description:
-      "A public body of work spanning Spring Boot backends, security systems, AI integrations, and DSA practice.",
-    role: "Portfolio",
-    badge: "Open Source",
-  },
-  {
-    title: "Stackxs Organization Member",
-    description:
-      "Contributing as part of the Stackxs developer organization on shared engineering initiatives.",
-    role: "Collaboration",
-    badge: "Community",
-  },
-  {
-    title: "Backend Specialist — Spring Ecosystem",
-    description:
-      "Deep, hands-on coverage of Spring Boot, Spring Security, Spring Data JPA, Spring AI and testing tooling.",
-    role: "Specialization",
-    badge: "Expertise",
+      "175 problems solved across arrays, strings, linked lists, trees, dynamic programming and backtracking — with a consistent daily practice record.",
+    logo: "https://cdn.simpleicons.org/leetcode/FFA116",
+    logoClass: "w-[32px] h-[32px]",
+    href: "https://leetcode.com/u/Himanshu_bagga/",
   },
 ];
 
@@ -868,14 +877,15 @@ export const repositoriesData = {
 export const leetCodeData = {
   username: "Himanshu_bagga",
   url: "https://leetcode.com/u/Himanshu_bagga/",
-  problemsSolved: 168,
+  problemsSolved: 175,
   streak: 50,
   ranking: "Arrays · Strings · Linked Lists · Trees · DP · Backtracking",
 };
 
 export const footerData = {
   taglines: ["Java Backend Engineer", "Spring Boot & Real-Time Systems", "Problem Solver"],
-  credential: "B.Tech CSE · SRMIST · 168 DSA Problems · 36 Repositories",
+  credential:
+    "B.Tech CSE · SRMIST · 175 DSA Problems · SAP · Microsoft · Redis Certified",
   copyright: `© ${new Date().getFullYear()} Himanshu Bagga | Built with React`,
 };
 

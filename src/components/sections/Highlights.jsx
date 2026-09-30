@@ -1,5 +1,81 @@
 import { highlightsData, leetCodeData, socials } from "../../data/index.js";
 
+const HIGHLIGHT_ICONS = {
+  paper: (
+    <svg
+      className="w-full h-full"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M6 3h9l4 4v14a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1z"
+      />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 3v4h4" />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M8.5 13.5l2 2 4-4.5"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M8.5 18.5h7"
+      />
+    </svg>
+  ),
+  microsoft: (
+    <svg className="w-full h-full" viewBox="0 0 23 23">
+      <rect x="1" y="1" width="10" height="10" fill="#F25022" />
+      <rect x="12" y="1" width="10" height="10" fill="#7FBA00" />
+      <rect x="1" y="12" width="10" height="10" fill="#00A4EF" />
+      <rect x="12" y="12" width="10" height="10" fill="#FFB900" />
+    </svg>
+  ),
+};
+
+function HighlightLogo({ h }) {
+  const glyph = h.icon ? (
+    <span className="block w-[26px] h-[26px] text-[#ff7900]">
+      {HIGHLIGHT_ICONS[h.icon]}
+    </span>
+  ) : (
+    <img
+      src={h.logo}
+      alt=""
+      loading="lazy"
+      className={`${h.logoClass ?? "w-[30px] h-[30px]"} object-contain`}
+      onError={(e) => {
+        e.currentTarget.style.display = "none";
+      }}
+    />
+  );
+
+  const body = (
+    <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-[#ff7200]/35 bg-[#ff7200]/10 transition-colors duration-400 group-hover:border-[#ff7200]/70 group-hover:bg-[#ff7200]/15">
+      {glyph}
+    </span>
+  );
+
+  return h.href ? (
+    <a
+      href={h.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={h.title}
+      className="shrink-0"
+    >
+      {body}
+    </a>
+  ) : (
+    body
+  );
+}
+
+
 function StatsPanel() {
   return (
     <div className="relative w-full h-full min-h-[420px] overflow-hidden">
@@ -29,10 +105,10 @@ function StatsPanel() {
 
         <div className="grid grid-cols-2 gap-4">
           {[
-            { v: "36", l: "Public Repos" },
-            { v: leetCodeData.problemsSolved, l: "DSA Problems" },
-            { v: `${leetCodeData.streak}-Day`, l: "LeetCode Streak" },
-            { v: "2×", l: "Pull Shark" },
+            { v: "1", l: "Paper Published" },
+            { v: "3", l: "Global Certs" },
+            { v: leetCodeData.problemsSolved, l: "LeetCode Solved" },
+            { v: "4th", l: "ICICACS 2026" },
           ].map((s) => (
             <div
               key={s.l}
@@ -110,8 +186,8 @@ export default function Highlights() {
               &amp; Recognition
             </h2>
             <p className="text-white/45 text-sm md:text-base lg:text-lg leading-relaxed font-medium max-w-[850px]">
-              Open source contributions, consistent problem solving, and
-              sustained delivery across backend engineering.
+              Peer-reviewed research, globally recognized certifications, and
+              consistent problem solving across backend engineering.
             </p>
           </header>
 
@@ -129,21 +205,27 @@ export default function Highlights() {
                 >
                   <span className="absolute -left-[47px] top-8 w-[14px] h-[14px] rounded-full bg-[#ff7200] shadow-[0_0_16px_rgba(255,114,0,0.75)]" />
 
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
-                    <span className="rounded-full border border-[#ff7200]/40 bg-[#ff7200]/10 px-3 py-1 text-[9.5px] font-black uppercase tracking-[0.18em] text-[#ff7900]">
-                      {h.badge}
-                    </span>
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/35">
-                      {h.role}
-                    </span>
-                  </div>
+                  <div className="flex items-start gap-4 md:gap-5">
+                    <HighlightLogo h={h} />
 
-                  <h3 className="text-white text-xl md:text-2xl font-black tracking-[-0.03em] leading-tight">
-                    {h.title}
-                  </h3>
-                  <p className="mt-2.5 text-white/50 text-sm leading-relaxed">
-                    {h.description}
-                  </p>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-wrap items-center gap-3 mb-3">
+                        <span className="rounded-full border border-[#ff7200]/40 bg-[#ff7200]/10 px-3 py-1 text-[9.5px] font-black uppercase tracking-[0.18em] text-[#ff7900]">
+                          {h.badge}
+                        </span>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/35">
+                          {h.role}
+                        </span>
+                      </div>
+
+                      <h3 className="text-white text-xl md:text-2xl font-black tracking-[-0.03em] leading-tight">
+                        {h.title}
+                      </h3>
+                      <p className="mt-2.5 text-white/50 text-sm leading-relaxed">
+                        {h.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
